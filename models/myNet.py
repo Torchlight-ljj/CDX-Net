@@ -24,7 +24,7 @@ class Model(nn.Module):
         self.aspp = ASPP(in_channel=1,depth=self.hidC,k_size=self.Ck)
         self.se1 = SE_Block(self.hidC)
         self.avepool = nn.AvgPool2d(kernel_size=(3,1),stride=(4,1))
-# GUR
+# GRU
         self.GRU = nn.GRU(self.hidC, self.hidR)
 # sr        
         self.sr = SRlayer_(1)
